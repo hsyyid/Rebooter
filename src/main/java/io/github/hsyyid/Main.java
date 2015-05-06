@@ -3,6 +3,7 @@ package io.github.hsyyid;
 import org.spongepowered.api.Server;
 import org.spongepowered.api.event.Subscribe;
 import org.spongepowered.api.event.state.ServerStartedEvent;
+import org.spongepowered.api.event.state.ServerStoppedEvent;
 import org.spongepowered.api.event.state.ServerStoppingEvent;
 import org.spongepowered.api.plugin.Plugin;
 import org.spongepowered.api.service.command.CommandService;
@@ -32,7 +33,7 @@ public class Main {
 	}
 	
 	@Subscribe
-	public void onServerStopping(ServerStoppingEvent event){
+	public void onServerStopped(ServerStoppedEvent event){
 		//Run BATCH FILE when Server Stops.
 		try {
             String[] command = { "cmd.exe", "/C", "Start", "run.bat"};
